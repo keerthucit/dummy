@@ -1,0 +1,57 @@
+<!-- Label to display any error messages -->
+<label class="error-message">{{ errMessage }}</label>
+<!-- Expansion panel to add Food Items -->
+
+<!--<div class="username"> Welcome to Philips F & B: {{userDisplayName | uppercase}}</div>-->
+<div id="content" #content>  
+  <mat-card>  
+   <div>  
+      <input type="button" value="Capture Your F & B" (click)="captureScreen()"/>  
+    </div>  
+  </mat-card>  
+</div>  
+<div class="row" id="contentToConvert">
+    <h2 style="text-align: center"> Welcome {{userDisplayName | uppercase}}</h2>
+  <div class="col-sm-6" style="background-color:rosybrown;">
+
+    <h2 style="text-align: center">Yummy Foods</h2>
+    <ul class="heroes">
+      <li *ngFor="let item of fItems" [class.selected]="item === selectedItems" (click)="onSelectFood(item)">
+        <span class="badge">{{item.id}}</span> {{item.name}}
+      </li>
+    </ul>
+
+    <div *ngIf="selectedItems">
+
+      <h2>{{selectedItems.name}} Details</h2>
+      <div><span> Food ID: </span>{{selectedItems.id}}</div>
+      <div>
+        <label>Food Selected:
+          <input [(ngModel)]="selectedItems.name" placeholder="name" />
+        </label>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-sm-6" style="background-color:chartreuse">
+
+    <!-- Expansion panel to add Beverages -->
+    <h2 style="text-align: center">Yummy Beverages</h2>
+    <ul class="heroes">
+      <li *ngFor="let item of bItems" [class.selected]="item === selectedBItems" (click)="onSelectBeverage(item)">
+        <span class="badge">{{item.id}}</span> {{item.name}}
+      </li>
+    </ul>
+
+    <div *ngIf="selectedBItems">
+      <h2>{{selectedBItems.name}} Details</h2>
+      <div><span>Beverage ID: </span>{{selectedBItems.id}}</div>
+      <div>
+        <label>Beverage Selected:
+          <input [(ngModel)]="selectedBItems.name" placeholder="name" />
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<div><img class="logo" src="assets/logophilips.png"></div>

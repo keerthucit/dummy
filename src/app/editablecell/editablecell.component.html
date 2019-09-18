@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3>{{appTitle}}</h3>
+    </div>
+    <div class="col-sm">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First name</th>
+            <th scope="col">Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row" style="width:50%">
+              <app-inline-edit [(ngModel)]="firstName" type="text"> </app-inline-edit>
+            </td>
+            <td scope="row" style="width:50%">
+              <app-inline-edit [(ngModel)]="lastName" type="text"> </app-inline-edit>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
