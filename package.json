@@ -30,7 +30,7 @@
     "html2canvas": "^1.0.0-rc.1",
     "json-server": "^0.12.1",
     "jsonwebtoken": "^8.2.1",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "object-assign": "^4.1.1",
     "promise": "^8.0.1",
     "rxjs": "^5.5.2",
